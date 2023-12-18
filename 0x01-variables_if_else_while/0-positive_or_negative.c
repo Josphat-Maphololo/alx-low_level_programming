@@ -10,7 +10,7 @@ int main(void)
 int n;
 srand(time(NULL));
 n = rand() % 201 - 100;
-printf("The number %d is", n);    
+printf("The number %d is", n);
 if (n > 0)
 {
 printf("positive");
