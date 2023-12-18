@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main A program to select random positve or neagative numbers
+ * main - A program to select random positve or neagative numbers
  * Return: 0 (Success)
  */
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
 int n;
 srand(time(NULL));
 n = rand() % 201 - 100;
-printf("%d is ",n);
+printf("%d is ", n);
 if (n > 0)
 {
 printf("positive");
