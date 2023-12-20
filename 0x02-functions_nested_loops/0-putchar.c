@@ -1,4 +1,4 @@
-#include "mai.h"
+#include "main.h"
 /**
  * main - A programm that prints the statement _putchar
  * Return: 0 (Success)
