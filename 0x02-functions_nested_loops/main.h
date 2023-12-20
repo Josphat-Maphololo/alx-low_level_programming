@@ -1,7 +1,7 @@
 #ifndef MAIN_HEARDER_FILE
 #define MAIN_HEADER_FILE
 int _putcher(char c);
-void print_alphabetic(void);
+void print_alphabet(void);
 void print_alphabetic_x10(void);
 int isl0wer(int c);
 int isalpha(int c);
