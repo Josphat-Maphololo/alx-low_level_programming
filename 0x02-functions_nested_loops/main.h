@@ -1,15 +1,15 @@
 #ifndef MAIN_HEARDER_FILE
 #define MAIN_HEADER_FILE
-int _putcher(char c);
+int _putchar(char c);
 void print_alphabet(void);
-void print_alphabetic_x10(void);
-int isl0wer(int c);
-int isalpha(int c);
+void print_alphabet_x10(void);
+int _isl0wer(int c);
+int _isalpha(int c);
 int print_sign(int);
-int abs(int);
+int _abs(int);
 int print_last_digit(int);
-void jack_hammer(void);
+void jack_bauer(void);
 void time_table(void);
 int add(int, int);
-void print_to_90(int n);
+void print_to_98(int n);
 #endif
