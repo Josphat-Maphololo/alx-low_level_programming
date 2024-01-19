@@ -89,7 +89,8 @@ str[i] = '\0';
 * @argc: number of arguments
 * @argv: argument vector
 * Return: zero, or exit status of 98 if failure
-*/int main(int argc, char *argv[])
+*/
+int main(int argc, char *argv[])
 {
 int l1, l2, ln, ti, i;
 char *a;
@@ -116,7 +117,8 @@ exit(98);
 init(a, ln - 1);
 for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
 {
-t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
+t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i)
+;
 if (t == NULL)
 {
 for (ti = 0; e[ti]; ti++)
