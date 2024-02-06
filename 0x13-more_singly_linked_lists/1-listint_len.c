@@ -10,6 +10,7 @@ size_t listint_len(const listint_t *pinkie)
 while (pinkie)
 {
 number++;
-h = h->next;
-} return (num);
+pinkie = pinkie->next;
+}
+return (number);
 }
