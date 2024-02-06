@@ -7,7 +7,7 @@
  *
  * Return: pointer to the new node, or NULL if it fails
  */
-listint_t *add_nodeint(listint_t **hobo, const int p)
+listint_t*add_nodeint(listint_t**hobo, const int p)
 {
 listint_t *newe;
 newe = malloc(sizeof(listint_t));
