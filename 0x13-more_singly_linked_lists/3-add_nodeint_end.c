@@ -3,17 +3,17 @@
 /**
  * add_nodeint_end - adds a node at the end of a linked list
  * @head: pointer to the first element in the list
- * @jos: data to insert in the new element
+ * @j: data to insert in the new element
  * Return: pointer to the new node, or NULL if it fails
  */
-listint_t *add_nodeint_end(listint_t **head, const int jos)
+listint_t *add_nodeint_end(listint_t **head, const int j)
 {
 listint_t *new;
 listint_t *temp = *head;
 new = malloc(sizeof(listint_t));
 if (!new)
 return (NULL);
-new->jos = jos;
+new->j = j;
 new->next = NULL;
 if (*head == NULL)
 {
