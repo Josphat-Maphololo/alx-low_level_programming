@@ -24,5 +24,3 @@ num <<= 1;
 if (b[a] == '1')
 num += 1;
 }
-return (num);
-}
