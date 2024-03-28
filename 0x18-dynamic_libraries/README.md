@@ -1,1 +1,1 @@
-0x18. C - Dynamic libraries
+Dynamic/shared library Ends with .so on linux
