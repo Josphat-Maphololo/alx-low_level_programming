@@ -1,8 +1,5 @@
-include "search_algos.h"
-#include <stdio.h>
-
-/* Function prototype for binary */
-int binary(int *array, size_t low, size_t high, int value);
+#include <stddef.h>
+#include "search_algos.h"
 
 /**
  * binary_search - searches for a value in a sorted array of integers
@@ -18,11 +15,10 @@ int binary(int *array, size_t low, size_t high, int value);
  * in array or if array is NULL, return -1.
  * Return: the index where value is located or -1 if not found
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-if (array == NULL)
-return (-1);
-return (binary(array, 0, size - 1, value));
+	return (binary(array, 0, size - 1, value));
 }
 
 /**
@@ -30,31 +26,31 @@ return (binary(array, 0, size - 1, value));
  * @array: the array to search the value in
  * @low: the lower index of the array passed
  * @high: the high index of the passed array
- * @value: the value to be searched for
+ * @value: the value to be serched for
  *
  * Return: the index where value is located or -1 if not found
  */
 
 int binary(int *array, size_t low, size_t high, int value)
 {
-size_t mid;
-size_t idx;
-if (high >= low)
-{
-mid = (low + high) / 2);
-printf("Searching in array:");
-for (idx = low; idx <= high; idx++)
-{
-if (idx != high)
-printf(" %d,", array[idx]);
-else
-printf(" %d\n", array[idx]);
-}
-if (array[mid] == value)
-return (mid);
-if (array[mid] > value)
-return (binary(array, low, mid - 1, value));
-return (binary(array, mid + 1, high, value));
-}
-return (-1);
+	size_t mid = (high + low) / 2;
+	size_t idx;
+
+	printf("Searching in array:");
+	for (idx = low; idx <= high; idx++)
+	{
+		if (idx != high)
+			printf(" %d,", array[idx]);
+		else
+			printf(" %d\n", array[idx]);
+	}
+	if (mid == low && mid == high && array[mid] != value)
+		return (-1);
+	if (array[mid] == value)
+		return (mid);
+	else if (array[mid] > value)
+		binary(array, low, mid - 1, value);
+	else
+		binary(array, mid + 1, high, value);
+	return (-1);
 }
