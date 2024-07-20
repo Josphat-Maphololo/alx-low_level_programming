@@ -1,5 +1,6 @@
-#include <stddef.h>
 #include "search_algos.h"
+#include <stdio.h>
+#include <stddef.h>  /* Include for size_t */
 
 /**
  * binary_search - searches for a value in a sorted array of integers
@@ -15,9 +16,10 @@
  * in array or if array is NULL, return -1.
  * Return: the index where value is located or -1 if not found
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-	return (binary(array, 0, size - 1, value));
+    return (binary(array, 0, size - 1, value));
 }
 
 /**
@@ -25,31 +27,43 @@ int binary_search(int *array, size_t size, int value)
  * @array: the array to search the value in
  * @low: the lower index of the array passed
  * @high: the high index of the passed array
- * @value: the value to be serched for
+ * @value: the value to be searched for
  *
  * Return: the index where value is located or -1 if not found
  */
 
 int binary(int *array, size_t low, size_t high, int value)
 {
-	size_t mid = (high + low) / 2;
-	size_t idx;
+    size_t mid;
+    size_t idx;
 
-	printf("Searching in array:");
-	for (idx = low; idx <= high; idx++)
-	{
-		if (idx != high)
-			printf(" %d,", array[idx]);
-		else
-			printf(" %d\n", array[idx]);
-	}
-	if (mid == low && mid == high && array[mid] != value)
-		return (-1);
-	if (array[mid] == value)
-		return (mid);
-	else if (array[mid] > value)
-		binary(array, low, mid - 1, value);
-	else
-		binary(array, mid + 1, high, value);
-	return (-1);
+    if (high >= low)
+    {
+        mid = (low + high) / 2;
+
+        /* Print the current search range */
+        printf("Searching in array:");
+        for (idx = low; idx <= high; idx++)
+        {
+            if (idx != high)
+                printf(" %d,", array[idx]);
+            else
+                printf(" %d\n", array[idx]);
+        }
+
+        /* Check if the mid element is the value */
+        if (array[mid] == value)
+            return (mid);
+
+        /* If the value is less than the mid element, search the left half */
+        if (array[mid] > value)
+            return binary(array, low, mid - 1, value);
+
+        /* Otherwise, search the right half */
+        return binary(array, mid + 1, high, value);
+    }
+
+    /* Value is not present in the array */
+    return (-1);
 }
+
